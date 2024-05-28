@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/j2k.korea.io/static/css/main.4c27eae0.css",
+    "main.js": "/j2k.korea.io/static/js/main.5f2f47af.js",
+    "static/js/453.09c8c03a.chunk.js": "/j2k.korea.io/static/js/453.09c8c03a.chunk.js",
+    "static/media/service2.svg": "/j2k.korea.io/static/media/service2.472b5ba7137e8989c501181dce67c495.svg",
+    "static/media/intro.svg": "/j2k.korea.io/static/media/intro.5bd4ecbd8047d3c41dc43ab71cb2358a.svg",
+    "static/media/service3.svg": "/j2k.korea.io/static/media/service3.0367c68317aebede4235996f1251c576.svg",
+    "static/media/service1.svg": "/j2k.korea.io/static/media/service1.4744bbaebc08e247b5bbdb2702d8584a.svg",
+    "static/media/logo_grey.svg": "/j2k.korea.io/static/media/logo_grey.232f22c2626a19a4fe05d9d63be39dc9.svg",
+    "static/media/logo_black.svg": "/j2k.korea.io/static/media/logo_black.299c77df5304006caf700520d3ffd6c6.svg",
+    "static/media/logo_white.svg": "/j2k.korea.io/static/media/logo_white.d16678b90735142972863e46d0293734.svg",
+    "index.html": "/j2k.korea.io/index.html",
+    "main.4c27eae0.css.map": "/j2k.korea.io/static/css/main.4c27eae0.css.map",
+    "main.5f2f47af.js.map": "/j2k.korea.io/static/js/main.5f2f47af.js.map",
+    "453.09c8c03a.chunk.js.map": "/j2k.korea.io/static/js/453.09c8c03a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c27eae0.css",
+    "static/js/main.5f2f47af.js"
+  ]
+}
