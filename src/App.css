@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#App{
+  min-width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.inner{
+  padding-left: 340px;
+  padding-right: 340px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+*{
+  box-sizing: border-box;
+  font-family: Pretendard-Regular;
+}
+
+@media screen and (max-width: 1700px) {
+  .inner{
+    padding-left: 200px;
+    padding-right: 200px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1500px) {
+  .inner{
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .inner{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .inner{
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
