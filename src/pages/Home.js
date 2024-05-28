@@ -8,6 +8,7 @@ import Goal from "../components/home/Goal";
 import Review from "../components/home/Review";
 import GoService from "../components/home/GoService";
 import Footer from "../components/common/Footer";
+import { Fade } from "react-awesome-reveal";
 
 function Home(){
     return(
