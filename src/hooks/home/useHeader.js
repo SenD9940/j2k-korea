@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 function useHeader(){
     const [scrollPosition, setScrollPosition] = useState(0);
     const [headerColor, setHeaderColor] = useState("#ffffff");
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+      setDropdownVisible(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setDropdownVisible(false);
+    };
+  
     
     // Scroll 위치를 감지
     const updateScroll = () => {
@@ -24,7 +34,7 @@ function useHeader(){
             setHeaderColor("#ffffff"); 
         }
     }, [scrollPosition]);
-    return {headerColor};
+    return {headerColor, handleMouseEnter, handleMouseLeave, isDropdownVisible}
 }
 
 export default useHeader;

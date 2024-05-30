@@ -3,9 +3,10 @@ import LOGO_WHITE from "../../images/logo_white.svg";
 import LOGO_BLACK from "../../images/logo_black.svg";
 import useHeader from "../../hooks/home/useHeader";
 import { useNavigate } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
 
 function Header(){
-    const {headerColor} = useHeader();
+    const {headerColor, handleMouseEnter, handleMouseLeave, isDropdownVisible} = useHeader();
     const navigate = useNavigate();
     return(
         <Container headercolor={headerColor}>
@@ -14,13 +15,21 @@ function Header(){
                 <ItemWrap headercolor={headerColor}>
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>
-                    <Item onClick={() => navigate("/contact")}>CONTACT US</Item>
+                    <Item  onMouseEnter={handleMouseEnter} onClick={() => navigate("/contact")}>CONTACT US</Item>
                 </ItemWrap>
                 <ButtonWrap headercolor={headerColor}>
                     <Option>로그인</Option>
                     <Option>회원가입</Option>
                 </ButtonWrap>
             </div>
+            {isDropdownVisible? 
+            <Slide direction="right">
+                <SubHeader headercolor={headerColor} onMouseLeave={handleMouseLeave}>
+                    <Item >문의하기</Item>
+                    <Item >AI상담</Item>
+                </SubHeader>
+            </Slide>
+            : null}
         </Container>
     )
 }
@@ -65,6 +74,7 @@ const ButtonWrap = styled.div`
     color: ${(props) => props.headercolor !== "transparent" ? "#434343" : "white"};
     display: flex;
     justify-self: flex-end;
+    z-index: 10;
     gap: 36px;
 `
 
@@ -72,6 +82,17 @@ const Option = styled.div`
     font-size: 15px;
     font-weight: 400;
     cursor: pointer;
+`
+
+const SubHeader = styled.div`
+    color: ${(props) => props.headercolor !== "transparent" ? "#434343" : "white"};
+    position: relative;
+    left: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
 `
 
 export default Header;

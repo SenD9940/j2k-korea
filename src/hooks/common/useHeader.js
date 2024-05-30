@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 function useHeader(){
     const [scrollPosition, setScrollPosition] = useState(0);
     const [toggle, setToggle] = useState(false);
+    const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+      setDropdownVisible(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setDropdownVisible(false);
+    };
+  
     
     // Scroll 위치를 감지
     const updateScroll = () => {
@@ -24,7 +34,8 @@ function useHeader(){
             setToggle(true);
         }
     }, [scrollPosition]);
-    return {toggle};
+
+    return {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible};
 }
 
 export default useHeader;
