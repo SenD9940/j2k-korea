@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
+import Header from "../components/home/Header";
 import Intro from "../components/home/Intro";
 import Company from "../components/home/Company";
 import Service from "../components/home/Service";

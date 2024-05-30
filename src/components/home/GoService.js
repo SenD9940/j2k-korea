@@ -1,11 +1,13 @@
 import { Slide } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function GoService(){
+    const navigate = useNavigate();
     return(
         <Container>
             <Title>최상의 품질로, <SpanStroke>나에게 맞는 고객맞춤형 서비스를 경험해보세요!</SpanStroke></Title>
-            <Slide direction="up"><Button>서비스 문의하러 가기</Button></Slide>
+            <Slide direction="up"><Button onClick={() => navigate("/contact")}>서비스 문의하러 가기</Button></Slide>
         </Container>
     )
 }

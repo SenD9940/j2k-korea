@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PartName from "../common/PartName";
 
 function Company(){
     return(
@@ -16,13 +17,6 @@ const Conatiner = styled.div`
     align-items: center;
     margin-top: 160px;
 `
-
-const PartName = styled.span`
-    color: #4A1B65;
-    font-size: 28px;
-    font-weight: 600;
-`
-
 const SpanStroke = styled.span`
     color: #111;
     text-align: center;

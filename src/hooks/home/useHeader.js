@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function useHeader(){
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [toggle, setToggle] = useState(false);
+    const [headerColor, setHeaderColor] = useState("#ffffff");
     
     // Scroll 위치를 감지
     const updateScroll = () => {
@@ -18,13 +18,13 @@ function useHeader(){
 
         // scroll 위치가 100이하라면 투명한 배경색을 지정하고, 아니면 흰색을 지정한다.
     useEffect(() => {
-        if (scrollPosition < 1) {
-            setToggle(false)
+        if (scrollPosition < 500) {
+            setHeaderColor("transparent"); 
         } else {
-            setToggle(true);
+            setHeaderColor("#ffffff"); 
         }
     }, [scrollPosition]);
-    return {toggle};
+    return {headerColor};
 }
 
 export default useHeader;
