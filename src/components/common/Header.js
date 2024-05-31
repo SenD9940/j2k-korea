@@ -43,8 +43,8 @@ const Container = styled.div`
     padding: 24px;
     transition-property: opacity;
     transition: 0.5s;
-    background-color: ${(props) => props.toggle ? "white" : "transparent"};
-    box-shadow: ${(props) => props.toggle ? "0px 4px 15px 0px rgba(16, 17, 55, 0.25)" : "none"};
+    background-color: ${(props) => props.toggle === "true" ? "white" : "transparent"};
+    box-shadow: ${(props) => props.toggle ==="true" ? "0px 4px 15px 0px rgba(16, 17, 55, 0.25)" : "none"};
     .inner{
         display: flex;
         align-items: center;
