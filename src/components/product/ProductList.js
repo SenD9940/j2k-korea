@@ -28,6 +28,7 @@ function ProductList(){
 
 const Container = styled.div`
     margin-top: 160px;
+    margin-bottom: 160px;
     .inner{
         display: flex;
         flex-direction: column;

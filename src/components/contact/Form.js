@@ -3,10 +3,11 @@ import InputText from "../common/InputText";
 import DragAndDrop from "../common/DragAndDrop";
 import DELETE_SVG from "../../images/delete.svg";
 import useContact from "../../hooks/contact/useContact";
+import LoadingWithProgressBar from "../common/LoadingWithProgressBar";
 
 function Form(){
-    const {fileList, handleChange} = useContact();
-    
+    const {fileList, handleChange, inputs, onChange, onSubmitClick, targetFileName, progress, showLoading} = useContact();
+
     const getFileList = () => {
         return fileList.map((item, index) => {
             return <Item key={index}><FileName>{item.name}</FileName><ButtonDelete src={DELETE_SVG} alt="delete"/></Item>
@@ -16,20 +17,21 @@ function Form(){
     return(
         <Container>
             <div className="inner">
+                {showLoading ? <LoadingWithProgressBar title={"파일 업로드"} subTitle={targetFileName} progress={progress}/> : null}
                 <InputWrap>
-                    <InputText placeholder={"이름"}/>
-                    <InputText placeholder={"회사명"} />
+                    <InputText type={"password"} placeholder={"비밀번호"} name={"password"} value={inputs.password} onChange={onChange}/>
+                    <InputText placeholder={"회사명"} name={"company"} value={inputs.company} onChange={onChange}/>
                 </InputWrap>
                 <InputWrap>
-                    <InputText placeholder={"연락처"}/>
-                    <InputText placeholder={"이메일"}/>
+                    <InputText placeholder={"연락처"} name={"tel"} value={inputs.tel} onChange={onChange}/>
+                    <InputText placeholder={"이메일"} name={"email"} value={inputs.email} onChange={onChange}/>
                 </InputWrap>
-                <TextArea placeholder="문의 내용"></TextArea>
+                <TextArea placeholder="문의 내용" name="content" onChange={onChange} value={inputs.content}></TextArea>
                 <DragAndDrop handleChange={handleChange}/>
                 <ItemWrap>
                     {getFileList()}
                 </ItemWrap>
-                <ButtonSubmit >문의하기</ButtonSubmit>
+                <ButtonSubmit onClick={onSubmitClick}>문의하기</ButtonSubmit>
             </div>
         </Container>
     )

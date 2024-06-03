@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import useFirebaseAuth from "../firebase/useFirebaseAuth";
 
 function useHeader(){
+    const {logout} = useFirebaseAuth();
     const [scrollPosition, setScrollPosition] = useState(0);
     const [toggle, setToggle] = useState("false");
     const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -35,7 +37,16 @@ function useHeader(){
         }
     }, [scrollPosition]);
 
-    return {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible};
+
+    const onLogoutClickHandler = () => {
+        logout().then(res =>{
+            if(res){
+                sessionStorage.removeItem("uid");
+            }
+        })
+    }
+
+    return {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler};
 }
 
 export default useHeader;

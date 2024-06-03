@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-function InputText({name, value, placeholder}){
+function InputText({name, type, value, placeholder, onChange}){
     return(
-        <Input name={name} value={value} placeholder={placeholder}/>
+        <Input name={name} type={type} value={value} placeholder={placeholder} onChange={onChange}/>
     )
 }
 

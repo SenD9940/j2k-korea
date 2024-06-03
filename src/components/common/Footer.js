@@ -28,7 +28,6 @@ function Footer(){
 }
 
 const Container = styled.div`
-    margin-top: 160px;
     padding: 30px;
     background: linear-gradient(180deg, #FFF 0%, #E4DFE8 100%);
     .inner{

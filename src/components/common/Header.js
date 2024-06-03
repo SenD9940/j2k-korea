@@ -6,7 +6,8 @@ import { Slide } from "react-awesome-reveal";
 
 function Header(){
     const navigate = useNavigate();
-    const {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible} = useHeader();
+    const {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler} = useHeader();
+    const uid = sessionStorage.getItem("uid");
     return(
         <Container toggle={toggle}>
             <div className="inner">
@@ -14,17 +15,17 @@ function Header(){
                 <ItemWrap >
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>
-                    <Item onMouseEnter={handleMouseEnter} onClick={() => navigate("/contact")}>CONTACT US</Item>
+                    <Item onMouseEnter={handleMouseEnter} onClick={() => navigate("/board")}>CONTACT US</Item>
                 </ItemWrap>
                 <ButtonWrap props="">
-                    <Option>로그인</Option>
+                    <Option onClick={() => {uid ? onLogoutClickHandler() : navigate("/login")}}>{uid ? "로그아웃" : "로그인"}</Option>
                     <Option>회원가입</Option>
                 </ButtonWrap>
             </div>
            {isDropdownVisible? 
            <Slide direction="right">
                 <SubHeader onMouseLeave={handleMouseLeave}>
-                    <Item >문의하기</Item>
+                    <Item onClick={() => navigate("/contact")}>문의하기</Item>
                     <Item >AI상담</Item>
                 </SubHeader>
            </Slide>

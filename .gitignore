@@ -11,7 +11,11 @@
 # production
 /build
 
+# backend
+/flask-server
+
 # misc
+
 .DS_Store
 .env
 .env.local
