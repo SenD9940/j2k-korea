@@ -27,7 +27,7 @@ function Header(){
             <Slide direction="right">
                 <SubHeader headercolor={headerColor} onMouseLeave={handleMouseLeave}>
                     <Item onClick={() => navigate("/contact")}>문의하기</Item>
-                    <Item >AI상담</Item>
+                    <Item onClick={() => navigate("/counsel")}>AI상담</Item>
                 </SubHeader>
             </Slide>
             : null}

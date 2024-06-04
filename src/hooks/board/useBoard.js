@@ -7,6 +7,7 @@ function useBoard(){
 
     useEffect(() => {
         getBoardList();
+        // eslint-disable-next-line
     }, [])
 
     const getBoardList = async() => {
