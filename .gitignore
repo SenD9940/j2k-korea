@@ -12,7 +12,7 @@
 /build
 
 # backend
-/flask-server
+/flask-server/venv
 
 # misc
 
