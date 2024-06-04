@@ -4,9 +4,12 @@ import useStorage from "../firebase/useStorage";
 import { v4 as uuidv4 } from 'uuid';
 import useCrypto from "../useCrypto";
 import useFirebaseAuth from "../firebase/useFirebaseAuth";
+import { useNavigate } from "react-router-dom";
 
 function useContact(){
+    const navigate = useNavigate();
     const {encrypto} = useCrypto();
+    const [showSucceedModal, setShowSucceedModal] = useState(false);
     const {anymousLogin} = useFirebaseAuth();
     const {uploadStorage} = useStorage();
     const { writeFirestore } = useFirestore();
@@ -19,6 +22,7 @@ function useContact(){
         company:"",
         email:"",
         content:"",
+        title:"",
         tel:""
     })
 
@@ -52,14 +56,16 @@ function useContact(){
             password:encrypted_password,
             email:encrypted_email,
             tel:encrypted_tel,
+            title:inputs.title,
             company:inputs.company,
-            content:inputs.content
+            content:inputs.content,
+            register_at:new Date()
             
         }
         console.log(data);
         writeFirestore("/Inquiry", document_id, data).then(res => {
             if(res){
-
+                setShowSucceedModal(true);
             }
         }).catch(err => {
             console.log(err);
@@ -78,7 +84,12 @@ function useContact(){
         return file_url_list;
     }
 
-    return {fileList, handleChange, inputs, onChange, onSubmitClick, targetFileName, progress, showLoading};
+    const onSucceedModalConfirmHandler = () => {
+        setShowSucceedModal(false);
+        navigate("/contact")
+    }
+
+    return {fileList, handleChange, inputs, onChange, onSubmitClick, targetFileName, progress, showLoading, showSucceedModal, onSucceedModalConfirmHandler};
 }
 
 export default useContact;

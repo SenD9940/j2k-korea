@@ -4,9 +4,10 @@ import DragAndDrop from "../common/DragAndDrop";
 import DELETE_SVG from "../../images/delete.svg";
 import useContact from "../../hooks/contact/useContact";
 import LoadingWithProgressBar from "../common/LoadingWithProgressBar";
+import Modal from "../common/Modal";
 
 function Form(){
-    const {fileList, handleChange, inputs, onChange, onSubmitClick, targetFileName, progress, showLoading} = useContact();
+    const {fileList, handleChange, inputs, onChange, onSubmitClick, targetFileName, progress, showLoading, showSucceedModal, onSucceedModalConfirmHandler} = useContact();
 
     const getFileList = () => {
         return fileList.map((item, index) => {
@@ -16,6 +17,7 @@ function Form(){
 
     return(
         <Container>
+            <Modal isOpen={showSucceedModal} title={"SUCCESS"} content={"문의 등록에 성공하였습니다"} onClose={onSucceedModalConfirmHandler}/>
             <div className="inner">
                 {showLoading ? <LoadingWithProgressBar title={"파일 업로드"} subTitle={targetFileName} progress={progress}/> : null}
                 <InputWrap>
@@ -26,6 +28,7 @@ function Form(){
                     <InputText placeholder={"연락처"} name={"tel"} value={inputs.tel} onChange={onChange}/>
                     <InputText placeholder={"이메일"} name={"email"} value={inputs.email} onChange={onChange}/>
                 </InputWrap>
+                <InputText placeholder={"제목"} name={"title"} value={inputs.title} onChange={onChange}/>
                 <TextArea placeholder="문의 내용" name="content" onChange={onChange} value={inputs.content}></TextArea>
                 <DragAndDrop handleChange={handleChange}/>
                 <ItemWrap>
