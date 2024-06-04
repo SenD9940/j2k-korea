@@ -12,7 +12,6 @@ function useBoard(){
 
     const getBoardList = async() => {
         const board_list = await readFirestoreWithSort("Inquiry", {name:"register_at", direction:"desc"}).then(res => {
-            console.log(res.size);
             const list = [];
             for(let i = 0; i < res.size; i++){
                 list.push({id:res.docs[i].id, ...res.docs[i].data()});

@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Board from './pages/Board';
 import Counsel from './pages/Counsel';
+import ContractView from './components/contact/ContractView';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/board' element={<Board />}/>
           <Route path='/counsel' element={<Counsel />}/>
+          <Route path='/contact/view' element={<ContractView />}/>
         </Routes>
       </BrowserRouter>
     </div>

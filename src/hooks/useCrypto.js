@@ -3,7 +3,6 @@ import CryptoJs from "crypto-js"
 function useCrypto(){
 
 const key = process.env.REACT_APP_SECRET_KEY;
-console.log(key);
 if (!key) return '';
 
 const decrypto = (data) => {
