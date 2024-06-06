@@ -1,6 +1,6 @@
 import axios from "axios";
 function useChatBot(){
-    const url = "https://fbf12.store/chatbot-common";
+    const url = "https://fbf12.store";
     const serviceBot = async(question) => {
         return await axios.post(`${url}/chatbot-common/`, {
             "user_question":question
