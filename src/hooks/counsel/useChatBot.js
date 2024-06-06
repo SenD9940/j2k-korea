@@ -1,8 +1,8 @@
 import axios from "axios";
 function useChatBot(){
-
+    const url = "https://fbf12.store/chatbot-common";
     const serviceBot = async(question) => {
-        return await axios.post(`https://${process.env.REACT_BACK_URL}/chatbot-common`, {
+        return await axios.post(`${url}/chatbot-common/`, {
             "user_question":question
         },
         {
@@ -13,7 +13,7 @@ function useChatBot(){
     }
 
     const commonBot = async(question) => {
-        return await axios.post(`https://${process.env.REACT_BACK_URL}/chatbot-service`, {
+        return await axios.post(`${url}/chatbot-service/`, {
             "user_question":question
         },
         {
