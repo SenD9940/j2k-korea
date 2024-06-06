@@ -2,7 +2,7 @@ import axios from "axios";
 function useChatBot(){
 
     const serviceBot = async(question) => {
-        return await axios.post("/service", {
+        return await axios.post(`https://${process.env.REACT_BACK_URL}/chatbot-common`, {
             "user_question":question
         },
         {
@@ -13,7 +13,7 @@ function useChatBot(){
     }
 
     const commonBot = async(question) => {
-        return await axios.post("/common", {
+        return await axios.post(`https://${process.env.REACT_BACK_URL}/chatbot-service`, {
             "user_question":question
         },
         {

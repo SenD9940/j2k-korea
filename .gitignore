@@ -15,7 +15,11 @@
 /flask-server/venv
 
 # misc
-
+.firebase
+.firebaserc
+firebase.*
+firestore.*
+storage.*
 .DS_Store
 .env
 .env.local

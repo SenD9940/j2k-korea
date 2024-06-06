@@ -12,6 +12,8 @@
     "firebase": "^10.12.2",
     "gh-pages": "^6.1.1",
     "http-proxy-middleware": "^3.0.0",
+    "node-fetch": "^3.3.2",
+    "python": "^0.0.4",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.11",
     "react-dom": "^18.3.1",
@@ -31,7 +33,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint .",
+    "start-server": "cd ../functions && flask run"
   },
   "eslintConfig": {
     "extends": [
@@ -50,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0"
   }
 }
