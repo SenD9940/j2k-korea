@@ -1,35 +1,34 @@
 import styled from "styled-components";
-import LOGO_WHITE from "../../images/logo_white.svg";
-import LOGO_BLACK from "../../images/logo_black.svg";
-import useHeader from "../../hooks/home/useHeader";
+import LOGO_BLACK from "../../../images/logo_black.svg";
 import { useNavigate } from "react-router-dom";
+import useHeader from "../../../hooks/common/useHeader";
 import { Slide } from "react-awesome-reveal";
 
 function Header(){
-    const {headerColor, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler} = useHeader();
     const navigate = useNavigate();
+    const {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler} = useHeader();
     const uid = sessionStorage.getItem("uid");
     return(
-        <Container headercolor={headerColor}>
+        <Container toggle={toggle}>
             <div className="inner">
-                <Logo src={headerColor !== "transparent" ? LOGO_BLACK : LOGO_WHITE} alt="logo"/>
-                <ItemWrap headercolor={headerColor}>
+                <Logo src={LOGO_BLACK} alt="logo"/>
+                <ItemWrap >
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>
                     <Item onMouseEnter={handleMouseEnter} onClick={() => navigate("/board")}>CONTACT US</Item>
                 </ItemWrap>
-                <ButtonWrap headercolor={headerColor}>
+                <ButtonWrap props="">
                     <Option onClick={() => {uid ? onLogoutClickHandler() : navigate("/login")}}>{uid ? "로그아웃" : "로그인"}</Option>
                     <Option>회원가입</Option>
                 </ButtonWrap>
             </div>
-            {isDropdownVisible? 
-            <Slide direction="right">
-                <SubHeader headercolor={headerColor} onMouseLeave={handleMouseLeave}>
+           {isDropdownVisible? 
+           <Slide direction="right">
+                <SubHeader onMouseLeave={handleMouseLeave}>
                     <Item onClick={() => navigate("/contact")}>문의하기</Item>
                     <Item onClick={() => navigate("/counsel")}>AI상담</Item>
                 </SubHeader>
-            </Slide>
+           </Slide>
             : null}
         </Container>
     )
@@ -43,10 +42,10 @@ const Container = styled.div`
     width: 100%;
     z-index: 2;
     padding: 24px;
-    background-color: ${(props) => props.headercolor};
-    box-shadow: ${(props) => props.headercolor !== "transparent" ? "0px 4px 15px 0px rgba(16, 17, 55, 0.25)" : "none"};
     transition-property: opacity;
     transition: 0.5s;
+    background-color: ${(props) => props.toggle === "true" ? "white" : "transparent"};
+    box-shadow: ${(props) => props.toggle ==="true" ? "0px 4px 15px 0px rgba(16, 17, 55, 0.25)" : "none"};
     .inner{
         display: flex;
         align-items: center;
@@ -58,7 +57,7 @@ const Logo = styled.img`
 `
 
 const ItemWrap = styled.div`
-    color: ${(props) => props.headercolor !== "transparent" ? "#434343" : "white"};
+    color: #434343;
     display: flex;
     gap: 85px;
     align-items: center;
@@ -72,10 +71,9 @@ const Item = styled.span`
 `
 
 const ButtonWrap = styled.div`
-    color: ${(props) => props.headercolor !== "transparent" ? "#434343" : "white"};
+    color: #434343;
     display: flex;
     justify-self: flex-end;
-    z-index: 10;
     gap: 36px;
 `
 
@@ -86,7 +84,6 @@ const Option = styled.div`
 `
 
 const SubHeader = styled.div`
-    color: ${(props) => props.headercolor !== "transparent" ? "#434343" : "white"};
     position: relative;
     left: 70px;
     display: flex;

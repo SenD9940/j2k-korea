@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import SUBMIT_SVG from "../../images/submit.svg";
-import useChat from "../../hooks/counsel/useChat";
+import SUBMIT_SVG from "../../../images/submit.svg";
+import useChat from "../../../hooks/counsel/useChat";
 
 function Chat({selectedNav}){
     const {input, onChange, onSubmitClickHandler, commonChatList, serviceChatList, scrollRef} = useChat(selectedNav);
@@ -100,7 +100,7 @@ const Bot = styled.span`
     font-weight: 400;
     align-self: baseline;
     max-width: 500px;
-    
+    white-space: pre-wrap;
 `
 
 const User = styled.span`

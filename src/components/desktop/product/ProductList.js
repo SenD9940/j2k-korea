@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import ProductItem from "./ProductItem";
-import SERVICE_1_SVG from "../../images/service1.svg";
-import SERVICE_2_SVG from "../../images/service2.svg";
-import SERVICE_3_SVG from "../../images/service3.svg";
+import SERVICE_1_SVG from "../../../images/service1.svg";
+import SERVICE_2_SVG from "../../../images/service2.svg";
+import SERVICE_3_SVG from "../../../images/service3.svg";
 import { Slide } from "react-awesome-reveal";
 
 function ProductList(){

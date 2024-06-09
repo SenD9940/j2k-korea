@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import LOGO_GREY from "../../images/logo_grey.svg"
+import LOGO_GREY from "../../../images/logo_grey.svg"
 
 function Footer(){
     return(

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import useBoard from "../hooks/board/useBoard";
-import Item from "../components/board/Item";
-import useComparePassword from "../hooks/board/useComparePassword";
-import InputModal from "../components/common/InputModal";
-import Modal from "../components/common/Modal";
+import Header from "../../components/desktop/common/Header";
+import Footer from "../../components/desktop/common/Footer";
+import useBoard from "../../hooks/board/useBoard";
+import Item from "../../components/desktop/board/Item";
+import useComparePassword from "../../hooks/board/useComparePassword";
+import InputModal from "../../components/desktop/common/InputModal";
+import Modal from "../../components/desktop/common/Modal";
 
-function Board(){
+function DBoard(){
     const {boardList} = useBoard()
     const {input, onChange, showPasswordModal, setShowPasswordModal, showErrorModal, setShowErrorModal, onComparePasswordHandler, onConfirmClick} = useComparePassword();
     const getBoardList = () => {
@@ -69,4 +69,4 @@ const TdHead = styled.td`
 `
 
 
-export default Board;
+export default DBoard;

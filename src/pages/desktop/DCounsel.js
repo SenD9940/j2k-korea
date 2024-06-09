@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import Navigation from "../components/counsel/Navigation";
-import Chat from "../components/counsel/Chat";
+import Header from "../../components/desktop/common/Header";
+import Footer from "../../components/desktop/common/Footer";
+import Navigation from "../../components/desktop/counsel/Navigation";
+import Chat from "../../components/desktop/counsel/Chat";
 import { useState } from "react";
 
-function Counsel(){
+function DCounsel(){
     const [selectedNav, setSelectedNav] = useState("common");
     const onNavClickHandler = (e) => {
         setSelectedNav(e.target.id);
@@ -44,4 +44,4 @@ const Contents = styled.div`
     }
 `
 
-export default Counsel;
+export default DCounsel;

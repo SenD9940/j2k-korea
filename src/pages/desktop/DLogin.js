@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import ID_SVG from "../images/id.svg";
-import PW_SVG from "../images/pw.svg";
-import useLogin from "../hooks/login/useLogin";
-import Modal from "../components/common/Modal";
+import Header from "../../components/desktop/common/Header";
+import Footer from "../../components/desktop/common/Footer";
+import ID_SVG from "../../images/id.svg";
+import PW_SVG from "../../images/pw.svg";
+import useLogin from "../../hooks/login/useLogin";
+import Modal from "../../components/desktop/common/Modal";
 
-function Login(){
+function DLogin(){
     const {onChange, inputs, onLoginClickHandler, isSucceed, onSucceedModalConfirmHandler} = useLogin();
     return(
         <Container>
@@ -108,4 +108,4 @@ const Button = styled.button`
     border: none;
 `
 
-export default Login;
+export default DLogin;

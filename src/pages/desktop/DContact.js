@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Header from "../components/common/Header"
-import PartName from "../components/common/PartName";
-import Form from "../components/contact/Form";
+import Header from "../../components/desktop/common/Header"
+import PartName from "../../components/desktop/common/PartName";
+import Form from "../../components/desktop/contact/Form";
 
-function Contact(){
+function DContact(){
     return(
         <Container>
             <Header />
@@ -26,4 +26,4 @@ const Contents = styled.div`
 `
 
 
-export default Contact;
+export default DContact;

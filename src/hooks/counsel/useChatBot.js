@@ -1,8 +1,12 @@
 import axios from "axios";
+
+const instance = axios.create({
+    baseURL: "https://j2k.store",
+});
+
 function useChatBot(){
-    const url = "https://fbf12.store";
     const serviceBot = async(question) => {
-        return await axios.post(`${url}/chatbot-common/`, {
+        return await instance.post(`/chatbot-service/`, {
             "user_question":question
         },
         {
@@ -13,7 +17,7 @@ function useChatBot(){
     }
 
     const commonBot = async(question) => {
-        return await axios.post(`${url}/chatbot-service/`, {
+        return await instance.post(`/chatbot-common/`, {
             "user_question":question
         },
         {

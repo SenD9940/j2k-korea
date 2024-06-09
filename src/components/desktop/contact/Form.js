@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import InputText from "../common/InputText";
 import DragAndDrop from "../common/DragAndDrop";
-import DELETE_SVG from "../../images/delete.svg";
-import useContact from "../../hooks/contact/useContact";
+import DELETE_SVG from "../../../images/delete.svg";
+import useContact from "../../../hooks/contact/useContact";
 import LoadingWithProgressBar from "../common/LoadingWithProgressBar";
 import Modal from "../common/Modal";
 

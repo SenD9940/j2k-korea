@@ -15,6 +15,11 @@
   padding-right: 340px;
 }
 
+.inner-mobile{
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 *{
   box-sizing: border-box;
   font-family: Pretendard-Regular;

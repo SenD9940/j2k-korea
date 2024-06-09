@@ -6,11 +6,11 @@ function useChat(selectedNav){
     const {commonBot, serviceBot} = useChatBot();
     const [commonChatList, setCommonChatList] = useState([{
         user:"bot",
-        content:"무엇이든 궁금한 점을 물어보세요!"
+        content:"제품 개발, 생산, 유통, 마케팅 등 궁금한 점을 입력하시면 대답해드려요!"
     }])
     const [serviceChatList, setServiceChatList] = useState([{
         user:"bot",
-        content:"제품 개발, 생산, 유통, 마케팅 등 궁금한 점을 입력하시면 대답해드려요!"
+        content:"궁금한 업체 POOL에 대해 질문해 주세요!"
     }]);
     const [input, setInput] = useState("");
 

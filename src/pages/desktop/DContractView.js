@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
+import Header from "../../components/desktop/common/Header";
+import Footer from "../../components/desktop/common/Footer";
 import { useLocation } from "react-router-dom";
 import useContactView from "../../hooks/contact/useContactView";
 
-function ContractView(){
+function DContractView(){
     const id = useLocation().state;
     const {contact} = useContactView(id);
     const getImages = () => {
@@ -85,4 +85,4 @@ const TextArea = styled.div`
 const Image = styled.img`
 `
 
-export default ContractView;
+export default DContractView;

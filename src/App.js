@@ -1,25 +1,27 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Product from './pages/Product';
-import Contact from './pages/Contact';
-import Login from './pages/Login';
-import Board from './pages/Board';
-import Counsel from './pages/Counsel';
-import ContractView from './components/contact/ContractView';
+import DHome from './pages/desktop/DHome';
+import DProduct from './pages/desktop/DProduct';
+import DContact from './pages/desktop/DContact';
+import DLogin from './pages/desktop/DLogin';
+import DBoard from './pages/desktop/DBoard';
+import DCounsel from './pages/desktop/DCounsel';
+import DContractView from './pages/desktop/DContractView';
+import MHome from './pages/mobile/MHome';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter >
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/product' element={<Product />}/>
-          <Route path='/contact' element={<Contact />}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/board' element={<Board />}/>
-          <Route path='/counsel' element={<Counsel />}/>
-          <Route path='/contact/view' element={<ContractView />}/>
+          <Route path='/' element={<DHome />}/>
+          <Route path='/product' element={<DProduct />}/>
+          <Route path='/contact' element={<DContact />}/>
+          <Route path='/login' element={<DLogin/>}/>
+          <Route path='/board' element={<DBoard />}/>
+          <Route path='/counsel' element={<DCounsel />}/>
+          <Route path='/contact/view' element={<DContractView />}/>
+          <Route path='/m' element={<MHome/>}/>
         </Routes>
       </BrowserRouter>
     </div>

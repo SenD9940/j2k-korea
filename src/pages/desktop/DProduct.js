@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Header from "../components/common/Header";
-import PartName from "../components/common/PartName";
-import ProductList from "../components/product/ProductList";
-import Footer from "../components/common/Footer";
+import Header from "../../components/desktop/common/Header";
+import PartName from "../../components/desktop/common/PartName";
+import ProductList from "../../components/desktop/product/ProductList";
+import Footer from "../../components/desktop/common/Footer";
 
-function Product(){
+function DProduct(){
     return(
         <Container>
             <Header />
@@ -27,4 +27,4 @@ const Contents = styled.div`
     align-items: center;
 `
 
-export default Product;
+export default DProduct;
