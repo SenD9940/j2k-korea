@@ -6,6 +6,7 @@ function useHeader(){
     const [scrollPosition, setScrollPosition] = useState(0);
     const [toggle, setToggle] = useState("false");
     const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [isShowContents, setIsShowContents] = useState(false);
 
     const handleMouseEnter = () => {
       setDropdownVisible(true);
@@ -30,7 +31,7 @@ function useHeader(){
 
         // scroll 위치가 100이하라면 투명한 배경색을 지정하고, 아니면 흰색을 지정한다.
     useEffect(() => {
-        if (scrollPosition < 1) {
+        if (scrollPosition < 30) {
             setToggle("false")
         } else {
             setToggle("true");
@@ -46,7 +47,15 @@ function useHeader(){
         })
     }
 
-    return {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler};
+    const onCancelClickHandler = () => {
+        setIsShowContents(false);
+    }
+
+    const onBurgerClickHandler = () => {
+        setIsShowContents(true);
+    }
+
+    return {toggle, handleMouseEnter, handleMouseLeave, isDropdownVisible, onLogoutClickHandler, onBurgerClickHandler, onCancelClickHandler, isShowContents};
 }
 
 export default useHeader;

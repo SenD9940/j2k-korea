@@ -21,7 +21,7 @@ const Container = styled.div`
     .inner-mobile{
         position: absolute;
         bottom: 40px;
-        z-index: 2;
+        z-index: 1;
     }
 `
 
@@ -31,7 +31,7 @@ const IntroBackground = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, #111 0%, rgba(229, 229, 229, 0.00) 167.31%);
+    background: linear-gradient(180deg, #000 0%, rgba(114, 114, 114, 0.71) 118.46%);
     z-index: 1;
 `
 

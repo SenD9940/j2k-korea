@@ -1,0 +1,51 @@
+import { Slide } from "react-awesome-reveal";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+function GoService(){
+    const navigate = useNavigate();
+    return(
+        <Container>
+            <Title>최상의 품질로,<br/><SpanStroke>나에게 맞는 고객맞춤형 서비스를 경험해보세요!</SpanStroke></Title>
+            <Slide direction="up"><Button onClick={() => navigate("/m/inquiry")}>서비스 문의하러 가기</Button></Slide>
+        </Container>
+    )
+}
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 48px;
+    gap: 48px;
+`
+
+const Title = styled.div`
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const SpanStroke = styled.span`
+    color: #4A1B65;
+    font-size: 16px;
+    font-weight: 600;
+`
+
+const Button = styled.button`
+    border: none;
+    border-radius: 2px;
+    background: #4A1B65;
+    box-shadow: 0px 1.344px 6.721px 0px rgba(0, 0, 0, 0.10);
+    padding: 10px 20px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+`
+
+export default GoService;

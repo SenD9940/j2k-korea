@@ -25,6 +25,15 @@
   font-family: Pretendard-Regular;
 }
 
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
 @media screen and (max-width: 1700px) {
   .inner{
     padding-left: 200px;

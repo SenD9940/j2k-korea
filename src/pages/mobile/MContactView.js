@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Header from "../../components/desktop/common/Header";
-import Footer from "../../components/desktop/common/Footer";
+import Header from "../../components/mobile/common/Header";
+import Footer from "../../components/mobile/common/Footer";
 import { useLocation } from "react-router-dom";
 import useContactView from "../../hooks/contact/useContactView";
 
-function DContractView(){
+function MContactView(){
     const id = useLocation().state;
     const {contact} = useContactView(id);
     const getImages = () => {
@@ -19,15 +19,13 @@ function DContractView(){
         <Container>
             <Header />
             <Contents>
-                <div className="inner">
+                <div className="inner-mobile">
                     <InputWrap>
                         <InputText>{contact.register_at}</InputText>
                         <InputText>{contact.company}</InputText>
                     </InputWrap>
-                    <InputWrap>
-                        <InputText>{contact.tel}</InputText>
-                        <InputText>{contact.email}</InputText>
-                    </InputWrap>
+                    <InputText>{contact.tel}</InputText>
+                    <InputText>{contact.email}</InputText>
                     <InputText>{contact.title}</InputText>
                     <TextArea>{contact.content}</TextArea>
                     {getImages()}
@@ -48,12 +46,13 @@ const Container = styled.div`
 
 const Contents = styled.div`
     flex-grow: 1;
-    margin-top: 160px;
+    margin-top: 84px;
     width: 100%;
-    .inner{
+    .inner-mobile{
         display: flex;
         flex-direction: column;
         gap: 18px;
+        margin-bottom: 48px;
     }
 `
 
@@ -85,4 +84,4 @@ const TextArea = styled.div`
 const Image = styled.img`
 `
 
-export default DContractView;
+export default MContactView;

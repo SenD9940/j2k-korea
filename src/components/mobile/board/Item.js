@@ -8,7 +8,7 @@ function Item({title, writer, registerAt, id, onComparePasswordHandler}){
     const onItemClickHandler = () => {
         const uid = sessionStorage.getItem("uid");
         if(uid){
-            navigate("/contact/view", {state:id})
+            navigate("/m/contact/view", {state:id})
         }else{
             onComparePasswordHandler(id);
         }
@@ -33,7 +33,8 @@ const Tr = styled.tr`
 
 
 const Td = styled.td`
-    padding: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `
 
 export default Item;

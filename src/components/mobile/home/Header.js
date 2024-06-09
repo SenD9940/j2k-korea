@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import LOGO_WHITE_SVG from "../../../images/logo_white.svg";
 import LOGO_BLACK_SVG from "../../../images/logo_black.svg";
+import BURGER_SVG from "../../../images/buger.svg";
 import BURGER_GREY_SVG from "../../../images/burger_grey.svg";
 import useHeader from "../../../hooks/common/useHeader";
-import HeaderContent from "./HeaderContent";
+import HeaderContent from "../common/HeaderContent";
 
 function Header(){
     const {toggle, onBurgerClickHandler, onCancelClickHandler, isShowContents} = useHeader();
@@ -10,8 +12,8 @@ function Header(){
         <Container toggle={toggle}>
             {isShowContents ? <HeaderContent onCancelClickHandler={onCancelClickHandler}/> : null}
             <div className="inner-mobile">
-                <Logo src={LOGO_BLACK_SVG} alt="logo_white"/>
-                <ButtonMenu src={BURGER_GREY_SVG} alt="burger" onClick={onBurgerClickHandler}/>
+                <Logo src={toggle === "true" ? LOGO_BLACK_SVG : LOGO_WHITE_SVG} alt="logo_white"/>
+                <ButtonMenu src={toggle === "true" ? BURGER_GREY_SVG : BURGER_SVG} alt="burger" onClick={onBurgerClickHandler}/>
             </div>
         </Container>
     )

@@ -34,7 +34,11 @@ function useLogin(){
     }
 
     const onSucceedModalConfirmHandler = () => {
-        navigate("/board");
+        if(window.innerWidth < 1300){
+            navigate("/m/board");
+        }else{
+            navigate("/board");
+        }
         setIsSucceed(false);
     }
 

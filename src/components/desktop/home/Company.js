@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PartName from "../common/PartName";
+import PartName from "../../desktop/common/PartName";
 
 function Company(){
     return(

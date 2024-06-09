@@ -9,12 +9,15 @@ import Review from "../../components/desktop/home/Review";
 import GoService from "../../components/desktop/home/GoService";
 import Footer from "../../components/desktop/common/Footer";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function DHome(){
     const navigate = useNavigate();
-    if(window.innerWidth < 1300){
-        navigate("/m")
-    }
+    useEffect(()=>{
+        if(window.innerWidth < 1300){
+            navigate("/m")
+        }
+    },[])
     return(
         <Container>
             <Header/>
