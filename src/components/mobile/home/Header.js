@@ -7,10 +7,10 @@ import useHeader from "../../../hooks/common/useHeader";
 import HeaderContent from "../common/HeaderContent";
 
 function Header(){
-    const {toggle, onBurgerClickHandler, onCancelClickHandler, isShowContents} = useHeader();
+    const {toggle, onBurgerClickHandler, onCancelClickHandler, isShowContents, onLogoutClickHandler} = useHeader();
     return(
         <Container toggle={toggle}>
-            {isShowContents ? <HeaderContent onCancelClickHandler={onCancelClickHandler}/> : null}
+            {isShowContents ? <HeaderContent onCancelClickHandler={onCancelClickHandler} onLogoutClickHandler={onLogoutClickHandler}/> : null}
             <div className="inner-mobile">
                 <Logo src={toggle === "true" ? LOGO_BLACK_SVG : LOGO_WHITE_SVG} alt="logo_white"/>
                 <ButtonMenu src={toggle === "true" ? BURGER_GREY_SVG : BURGER_SVG} alt="burger" onClick={onBurgerClickHandler}/>

@@ -4,7 +4,8 @@ import CANCEL_SVG from "../../../images/cancel.svg";
 import { useNavigate } from "react-router-dom";
 import useScrollLock from "../../../hooks/useScrollLock";
 
-function HeaderContent({onCancelClickHandler}){
+function HeaderContent({onCancelClickHandler, onLogoutClickHandler}){
+    const uid = sessionStorage.getItem("uid");
     const navigate = useNavigate()
     const onItemClickHandler = (link) => {
         navigate(link); 
@@ -22,7 +23,7 @@ function HeaderContent({onCancelClickHandler}){
                     <Item onClick={() => onItemClickHandler("/m")}>COMPANY</Item>
                     <Item onClick={() => onItemClickHandler("/m/product")}>PRODUCT</Item>
                     <Item onClick={() => onItemClickHandler("/m/contact")}>CONTACT US</Item>
-                    <Item onClick={() => onItemClickHandler("/m/login")}>LOGIN</Item>
+                    <Item onClick={() => {uid ? onLogoutClickHandler() : onItemClickHandler("/m/login")}}>{uid ? "LOGOUT" : "LOGIN"}</Item>
                 </Contents>
             </div>
         </Container>

@@ -14,6 +14,7 @@ const Container = styled.div`
     width: 100%;
     .file-uploader{
         max-width: 100%;
+        width: 100%;
         height: 150px;
     }
 `
