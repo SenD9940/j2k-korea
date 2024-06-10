@@ -17,7 +17,7 @@ function Header(){
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>
                     <Item onMouseEnter={handleMouseEnter} onClick={() => navigate("/board")}>CONTACT US</Item>
-                    <Item onClick={() => navigate("/counsel")}>AI상담</Item>
+                    <Item onClick={() => navigate("/counsel")}>AI 상담</Item>
                 </ItemWrap>
                 <ButtonWrap headercolor={headerColor}>
                     <Option onClick={() => {uid ? onLogoutClickHandler() : navigate("/login")}}>{uid ? "로그아웃" : "로그인"}</Option>
