@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import Header from "../../components/mobile/common/Header";
 import PartName from "../../components/mobile/common/PartName";
-import PENCIL_SVG from "../../images/pencil.svg";
 import AI_SVG from "../../images/ai.svg";
 import Button from "../../components/mobile/contact/Button";
 import { useNavigate } from "react-router-dom";
 
 function MContact(){
     const navigate = useNavigate();
-    const uid = sessionStorage.getItem("uid");
     return(
         <>
             <Header />
