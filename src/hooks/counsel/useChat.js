@@ -19,6 +19,9 @@ function useChat(selectedNav){
     }
 
     const onSubmitClickHandler = () => {
+        if(!input){
+            return;
+        }
         if(selectedNav === "common"){
             commonChatBotHandler();
         }else if(selectedNav === "service"){
