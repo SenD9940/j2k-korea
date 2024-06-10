@@ -14,9 +14,8 @@ function MContact(){
             <Header />
             <Contents>
                 <div className="inner-mobile">
-                    <PartName>CONTACT US</PartName>
+                    <PartName>AI COUNSEL</PartName>
                     <Buttons>
-                        <Button icon={PENCIL_SVG} title={"문의하기"} desc={"전반 문의 사항에 대해서 자세히 답변 드립니다"} onClick={() => navigate(uid ? "/m/board" : "/m/inquiry")}/>
                         <Button icon={AI_SVG} title={"AI 상담원 연결"} desc={"제품 개발/생산/유통/마케팅\n전반 문의 사항에 대해서 빠르게 답변 드립니다"} onClick={() => navigate("/m/counsel", {state:"common"})}/>
                         <Button icon={AI_SVG} title={"업체 정보 AI 상담"} desc={"J2K가 보유하고 있는 업체 정보 POOL을 빠르게 제공합니다"} onClick={() => navigate("/m/counsel", {state:"service"})}/>
                     </Buttons>

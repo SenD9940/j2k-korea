@@ -16,6 +16,7 @@ function Header(){
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>
                     <Item onMouseEnter={handleMouseEnter} onClick={() => navigate("/board")}>CONTACT US</Item>
+                    <Item onClick={() => navigate("/counsel")}>AI상담</Item>
                 </ItemWrap>
                 <ButtonWrap props="">
                     <Option onClick={() => {uid ? onLogoutClickHandler() : navigate("/login")}}>{uid ? "로그아웃" : "로그인"}</Option>
@@ -26,7 +27,6 @@ function Header(){
            <Slide direction="right">
                 <SubHeader onMouseLeave={handleMouseLeave}>
                     <Item onClick={() => navigate("/contact")}>문의하기</Item>
-                    <Item onClick={() => navigate("/counsel")}>AI상담</Item>
                 </SubHeader>
            </Slide>
             : null}
@@ -85,7 +85,7 @@ const Option = styled.div`
 
 const SubHeader = styled.div`
     position: relative;
-    left: 70px;
+    left: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;

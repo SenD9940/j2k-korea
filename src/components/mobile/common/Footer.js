@@ -16,7 +16,7 @@ function Footer(){
                 </CompanyDesc>
                 <CSDesc>
                     <Label>고객센터</Label>
-                    <Tel>Tel. 043-1234-1234</Tel>
+                    <Tel>Tel. 010-5682-0609</Tel>
                     <ActiveWrap>
                         <ActiveTime>영업시간 09:00 ~ 17:00</ActiveTime>
                         <ActiveTime>점심시간 12:00 ~ 13:00</ActiveTime>
