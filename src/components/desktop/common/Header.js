@@ -11,7 +11,7 @@ function Header(){
     return(
         <Container toggle={toggle}>
             <div className="inner">
-                <Logo src={LOGO_BLACK} alt="logo"/>
+                <Logo src={LOGO_BLACK} alt="logo" onClick={() => navigate("/")}/>
                 <ItemWrap >
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>

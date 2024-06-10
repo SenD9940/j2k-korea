@@ -12,7 +12,7 @@ function Header(){
     return(
         <Container headercolor={headerColor}>
             <div className="inner">
-                <Logo src={headerColor !== "transparent" ? LOGO_BLACK : LOGO_WHITE} alt="logo"/>
+                <Logo src={headerColor !== "transparent" ? LOGO_BLACK : LOGO_WHITE} alt="logo" onClick={() => navigate("/")}/>
                 <ItemWrap headercolor={headerColor}>
                     <Item onClick={() => navigate("/")}>COMPANY</Item>
                     <Item onClick={() => navigate("/product")}>PRODUCT</Item>

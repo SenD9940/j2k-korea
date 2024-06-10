@@ -5,14 +5,16 @@ import BURGER_SVG from "../../../images/buger.svg";
 import BURGER_GREY_SVG from "../../../images/burger_grey.svg";
 import useHeader from "../../../hooks/common/useHeader";
 import HeaderContent from "../common/HeaderContent";
+import { useNavigate } from "react-router-dom";
 
 function Header(){
+    const navigate = useNavigate();
     const {toggle, onBurgerClickHandler, onCancelClickHandler, isShowContents, onLogoutClickHandler} = useHeader();
     return(
         <Container toggle={toggle}>
             {isShowContents ? <HeaderContent onCancelClickHandler={onCancelClickHandler} onLogoutClickHandler={onLogoutClickHandler}/> : null}
             <div className="inner-mobile">
-                <Logo src={toggle === "true" ? LOGO_BLACK_SVG : LOGO_WHITE_SVG} alt="logo_white"/>
+                <Logo src={toggle === "true" ? LOGO_BLACK_SVG : LOGO_WHITE_SVG} alt="logo_white" onClick={() => navigate("/")}/>
                 <ButtonMenu src={toggle === "true" ? BURGER_GREY_SVG : BURGER_SVG} alt="burger" onClick={onBurgerClickHandler}/>
             </div>
         </Container>

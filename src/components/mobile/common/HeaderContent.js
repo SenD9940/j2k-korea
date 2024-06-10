@@ -16,7 +16,7 @@ function HeaderContent({onCancelClickHandler, onLogoutClickHandler}){
         <Container>
             <div className="inner-mobile">
                 <Header>
-                    <Logo src={LOGO_BLACK_SVG} alt="logo_black"/>
+                    <Logo src={LOGO_BLACK_SVG} alt="logo_black" onClick={() => navigate("/")}/>
                     <ButtonMenu src={CANCEL_SVG} alt="cancel" onClick={onCancelClickHandler}/>
                 </Header>
                 <Contents>
