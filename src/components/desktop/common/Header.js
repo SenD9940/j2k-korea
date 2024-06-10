@@ -20,7 +20,7 @@ function Header(){
                 </ItemWrap>
                 <ButtonWrap props="">
                     <Option onClick={() => {uid ? onLogoutClickHandler() : navigate("/login")}}>{uid ? "로그아웃" : "로그인"}</Option>
-                    <Option>회원가입</Option>
+                    <Option onClick={() => navigate("/register")}>회원가입</Option>
                 </ButtonWrap>
             </div>
            {isDropdownVisible? 

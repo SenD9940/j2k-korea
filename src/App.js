@@ -15,6 +15,8 @@ import MCounsel from './pages/mobile/MCounsel'
 import MLogin from './pages/mobile/MLogin';
 import MBoard from './pages/mobile/MBoard';
 import MContactView from './pages/mobile/MContactView';
+import DRegister from './pages/desktop/DRegister';
+import MRegister from './pages/mobile/MRegister';
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
           <Route path='/board' element={<DBoard />}/>
           <Route path='/counsel' element={<DCounsel />}/>
           <Route path='/contact/view' element={<DContactView />}/>
+          <Route path='/register' element={<DRegister />}/>
           <Route path='/m' element={<MHome/>}/>
           <Route path='/m/inquiry' element={<MInquiry/>}/>
           <Route path='/m/product' element={<MProduct/>}/>
@@ -36,6 +39,7 @@ function App() {
           <Route path='/m/counsel' element={<MCounsel/>}/>
           <Route path='/m/login' element={<MLogin />}/>
           <Route path='/m/Board' element={<MBoard />}/>
+          <Route path='/m/Register' element={<MRegister />}/>
         </Routes>
       </BrowserRouter>
     </div>
