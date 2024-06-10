@@ -7,15 +7,12 @@ import { useState } from "react";
 
 function DCounsel(){
     const [selectedNav, setSelectedNav] = useState("common");
-    const onNavClickHandler = (e) => {
-        setSelectedNav(e.target.id);
-    }
     return(
         <Container>
             <Header/>
             <Contents>
                 <div className="inner">
-                    <Navigation selectedNav={selectedNav} onNavClickHandler={onNavClickHandler}/>
+                    <Navigation selectedNav={selectedNav} onNavClickHandler={setSelectedNav}/>
                     <Chat selectedNav={selectedNav}/>
                 </div>
             </Contents>
