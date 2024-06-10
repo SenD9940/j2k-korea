@@ -23,7 +23,7 @@ function HeaderContent({onCancelClickHandler, onLogoutClickHandler}){
                     <Item onClick={() => onItemClickHandler("/m")}>COMPANY</Item>
                     <Item onClick={() => onItemClickHandler("/m/product")}>PRODUCT</Item>
                     <Item onClick={() => onItemClickHandler(uid ? "/m/board" : "/m/inquiry")}>CONTACT US</Item>
-                    <Item onClick={() => onItemClickHandler("m/contact")}>AI COUNSEL</Item>
+                    <Item onClick={() => onItemClickHandler("/m/contact")}>AI COUNSEL</Item>
                     <Item onClick={() => {uid ? onLogoutClickHandler() : onItemClickHandler("/m/login")}}>{uid ? "LOGOUT" : "LOGIN"}</Item>
                 </Contents>
             </div>
